@@ -1,0 +1,173 @@
+/*****************************************
+        CSS START & LAYOUT FIX
+*****************************************/
+
+.widget * {
+    box-sizing: border-box;
+}
+
+.widget *, .widget *:before, *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.widget .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*****************************************
+         MAIN WIDGET PROPERTIES
+*****************************************/
+
+.widget {
+    margin: 0 auto;
+    max-width: 800px;
+    min-width: 500px;
+    font: 700 16px Georgia, sans-serif;
+    text-align: center;
+    color: #285db1;
+    text-shadow: 4px 4px 13px rgba(48, 106, 150, 0.5);
+    background: radial-gradient(#fff, #bfd8e6);
+    border-radius: 25px;
+}
+
+.widget h1 {
+    font-size: 20px;
+}
+
+.widget h2 {
+    font-size: 16px;
+}
+
+.widget h3 {
+    font-size: 14px;
+    text-align: right;
+    padding-right: 1.8rem;
+}
+
+.widget a {
+    text-decoration: none;
+}
+
+.widget p {
+    clear: both;
+    padding-top: 0.6rem;
+}
+
+.widget .tone-down {
+    color: rgba(111, 56, 185, 0.56);
+}
+
+/*****************************************
+        CIRCLE & BUTTON PROPERTIES
+*****************************************/
+
+.widget .circles {
+    height: 135px;
+    width: 135px;
+    float: left;
+    margin-left: 18px;
+    margin-top: 1rem;
+}
+
+.widget .circles:first-child {
+    margin-left: 16px;
+}
+
+.widget .circles p {
+    padding-top: 2.5rem;
+    text-shadow: 4px 4px 13px rgba(41, 96, 139, 0.55);
+}
+
+.widget .circles p.big {
+    font-size: 26px;
+    padding-top: 1rem;
+    color: #fff;
+}
+
+.widget .circles, .widget button {
+    border-radius: 50%;
+    background: linear-gradient(#fff, #345469);
+    border: 2px solid #c4c4c4;
+}
+
+.widget button {
+    font-size: 16px;
+    color: #fff;
+    padding: 2px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+/*****************************************
+    PROPERTIES FOR HIDDEN CONTAINERS
+*****************************************/
+
+.widget .container-2, .widget .container-3 {
+    display: none;
+    height: 320px;
+    overflow-y: scroll;
+    cursor: all-scroll;
+}
+
+.widget .container-2 .circles:first-child p, 
+.widget .container-2 .circles:nth-child(5n+6) p,
+.widget .container-3 .circles:first-child p,
+.widget .container-3 .circles:nth-child(5n+6) p {
+    padding-top: 0.5rem;
+}
+
+.widget .container-2 .circles:first-child p.big,
+.widget .container-2 .circles:nth-child(5n+6) p.big,
+.widget .container-3 .circles:first-child p.big,
+.widget .container-3 .circles:nth-child(5n+6) p.big {
+    padding-top: 1.0rem;
+}
+
+.widget .container-2 .circles:first-child,
+.widget .container-2 .circles:nth-child(5n+6),
+.widget .container-3 .circles:first-child,
+.widget .container-3 .circles:nth-child(5n+6) {
+    margin-left: 16px;
+}
+
+/*****************************************
+    SCROLLBAR DECOR for WEBKIT BROWSERS
+*****************************************/
+
+::-webkit-scrollbar {
+    width: 0;  /* for the vertical scrollbar */
+    height: 0; /* just in case, for a horizontal scrollbar, not used in most scenarios */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(201, 201, 201, 0.35);
+}
+
+/*****************************************
+   MEDIA QUERIES for RESPONSIVE DESIGN
+*****************************************/
+
+@media all and (max-width: 798px) {
+    
+    .widget .container-1 {
+        width: 500px;
+        margin: 0 auto;
+    } 
+    
+    .widget .container-1 .circles {
+        margin: 0 auto;
+        margin-left: 18px;
+        margin-top: 1rem;
+    }
+    
+    .widget .container-1 .circles:nth-child(4) {
+        margin-left: 95px;
+}
