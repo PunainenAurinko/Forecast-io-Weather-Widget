@@ -1,98 +1,44 @@
-****************************************
-         ======TO-DO LIST======
-****************************************
+*************************************************
+         Author: Vladimir Tonkonogov
+         Project: MAD9014
+         Title: Forecast.io Weather Widget
+*************************************************
 
-1. Make a daily forecast similar to the hourly forecast
+**
+===============
+1. DESCRIPTION:
+===============
 
-2. Make toggle button close the other container before opening its own
+This project represents a weather widget fetching data from Forecast.io website. The widget has the location coordinates set for Algonquin College Woodroffe campus, Ottawa, ON. It's a simple widget that you can put on your page by copying the div code it is contained in and a link to the JS file. The widget has two themes styled for the time of the day, light theme for 6 am to 6 pm, and dark theme for the evening and night 12 hours. 
 
-function toggle1(){
-    $('#clickme-1').click(function() {
-        if ($(".widget .container-3").x;") {
-            $('.widget .container-3').slideToggle();
-        }else{
-            $('.widget .container-2').slideToggle();}
-    });
-}
 
-function toggle2(){
-    $('#clickme-2').click(function() {
-        if ($(".widget .container-2").css("display") = "block") {
-            $('.widget .container-2').slideToggle();
-        }else{
-            $('.widget .container-3').slideToggle();}
-    });
-}
+**
+================
+2. INSTRUCTIONS:
+================
 
-3. Make a day and night widget depending on time of the day
+*********
+1) The weather widget starts with Algonquin College name and Current date and time. 
+Below this there is a link to forecast.io website that should fetch a more detailed weather information for that location. The link should be opened in a new window. 
+*********
 
-.widget {
-    margin: 0 auto;
-    max-width: 800px;
-    text-align: center;
-    font-family: Georgia, sans-serif;
-    background: radial-gradient(#d1d1d1, #000);
-    border-radius: 25px;
-    }
+*********
+2) Below that is the main widget field with five circles each containing information about current weather conditions: Current Conditions, Temperature, Cloud Cover, Humidity and Wind Speed. These circles just hold the necessary data and are not clickable.  
+*********
 
-and 
+*********
+3) Below them is the Next 24 hours weather forecast in a short sentence, which is followed by a + (plus) sign, which is clickable. When clicked, the plus sign opens a special container for the next 24 hours weather forecast. This container is scrollable vertically down (and then up again), and has a special mouse symbol indicating that. The scroll bars have been removed in CSS to make the widget look sleeker (::-webkit-scrollbar { width: 0; };). The circles inside the container have almost similar kind of information to the main widget field, except for the first one, which also shows the time the specific circle forecast line is referred to. Clicking the plus sign again will close this container.
+*********
 
-.widget .columns {
-    height: 135px;
-    width: 135px;
-    float: left;
-    margin-left: 20px;
-    margin-top: 1rem;
-    /*background: rgba(64, 106, 172, 0.19);*/
-    border-radius: 50%;
-    background: linear-gradient(#3b6389, #000);
-    border: 2px solid #7e7e7e
-    };
+*********
+4) Below that, there is another line, showing the forecast in words for next week. At the end of the line, there is again a plus sign, that opens another container for the detailed weather forecast for next week. You have to click the plus sign to open that container. It also has no visible scroll bars. The first circle in a forecast line has days of the week and forecasted weather conditions. The rest of the circles are similar to the ones we had before, except for the Temperature circles, which now shows the range of temperatures for that particular day of the week. The plus button will close this container when clicked.
+*********
 
-$(document).ready(function(){
-var newD = new Date();
-	var n = newD.getHours();
-	if (n > 19 || n < 7)
-	  // If time is after 7PM or before 7AM, apply night theme to ‘columns’
-	  document.div.className = "night";
-	else
-	  // Else use ‘day’ theme
-	  document.div.className = "day";
-});
+*********
+4) You cannot have both containers opened at the same time, but you can open another container, when any of them is opened, and it will show on top of the opened one. You can interate between the containers by clicking plus signs for the two containers one after the other. If you want to close the container field altogether, you have to click the plus sign for the conatiner that is currently showing in the field.
+*********
 
-4. Military time to am pm conversion
+I hope that you will find this little widget helpful and will use it in your website. It is free of charge. Please contact the developer at 613 123 4567 in case you have any questions.
 
-var date = new Date(data.hourly.data[h].time * 1000);
-        var hours = date.getHours();
-        var minutes = date.getMinutes();
-        //var ampm = hours >= 12 ? 'pm' : 'am';
-        //hours = hours % 12;
-        //hours = hours ? hours : 12;
-        var HoursOfTheDay = hours + ':' + minutes + minutes;
-        
-5. Remove redundant margin for .circles childs
 
-.widget .container-2 .circles:first-child,
-.widget .container-2 .circles:nth-child(5n+6),
-.widget .container-3 .circles:first-child,
-.widget .container-3 .circles:nth-child(5n+6) {
-    margin-left: 16px;
-}
-
-6. Split JS file into 2 
-
-    document.querySelector("head").appendChild(script);
-    script.setAttribute("src", "//m.edumedia.ca/tonk0006/mad9014/weather/js/widget.js");
-    
-7. Resolve minutely problem
-
-var Next24Hours;
-
-function Next24HourData(){
-    Next24Hours = data.minutely.summary;
-        if (Next24Hours !== undefined) {
-            Next24Hours = data.minutely.summary;
-        }else {
-            Next24Hours = 'No rain expected.';
-        };
-    }
+(c) Vladimir Tonkonogov
