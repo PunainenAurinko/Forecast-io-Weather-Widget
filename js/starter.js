@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
     
     document.querySelector("head").appendChild(script);
-    script.setAttribute("src", "//m.edumedia.ca/tonk0006/mad9014/weather/js/widget.js");
+    script.setAttribute("src", "js/widget.js");
 });
 
     
